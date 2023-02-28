@@ -2,14 +2,14 @@ import pymongo
 import pandas as pd
 import json
 import os
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-#load_dotenv()
+load_dotenv()
 
 client = pymongo.MongoClient(os.getenv("MONGO_DB_URL"))
 
 
-DATA_FILE_PATH = "/config/workspace/SCMS_Delivery_History_Dataset.csv"
+DATA_FILE_PATH = "/config/workspace/shipment_price_prediction_dataset.csv"
 DATABASE_NAME="shipping"
 COLLECTION_NAME="shipment"
 
