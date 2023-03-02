@@ -6,8 +6,8 @@ from datetime import datetime
 FILE_NAME = "shipment.csv"
 TRAIN_FILE_NAME = "train.csv"
 TEST_FILE_NAME = "test.csv"
-TRANSFORMER_OBJECT_FILE_NAME = "transformer.pkl"
-TARGET_ENCODER_OBJECT_FILE_NAME = "target_encoder.pkl"
+INPUT_TRANSFORMER_OBJECT_FILE_NAME = "transformer.pkl"
+TARGET_TRANSFORMER_OBJECT_FILE_NAME = "target_encoder.pkl"
 MODEL_FILE_NAME = "model.pkl"
 
 class TrainingPipelineConfig:
@@ -43,4 +43,13 @@ class DataValidationConfig:
    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
         self.data_validation_dir = os.path.join(training_pipeline_config.artifact_dir , "data_validation")
         self.report_file_path=os.path.join(self.data_validation_dir, "report.yaml")
-        self.base_file_path = os.path.join("shipment_price_prediction_dataset.csv")
+        self.base_file_path = os.path.join("SCMS_Delivery_History_Dataset.csv")
+
+
+class DataTransformationConfig:
+     def __init__(self,training_pipeline_config:TrainingPipelineConfig):
+        self.data_transformation_dir = os.path.join(training_pipeline_config.artifact_dir , "data_transformation")
+        self.input_transformer_object_path = os.path.join(self.data_transformation_dir,"transformer",INPUT_TRANSFORMER_OBJECT_FILE_NAME)
+        self.transformed_train_path =  os.path.join(self.data_transformation_dir,"transformed",TRAIN_FILE_NAME.replace("csv","npz"))
+        self.transformed_test_path =os.path.join(self.data_transformation_dir,"transformed",TEST_FILE_NAME.replace("csv","npz"))
+        self.target_transformer_object_path = os.path.join(self.data_transformation_dir,"target_encoder",TARGET_TRANSFORMER_OBJECT_FILE_NAME)
