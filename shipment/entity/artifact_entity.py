@@ -18,4 +18,8 @@ class DataTransformationArtifact:
     transformed_test_path:str
     target_transformer_object_path:str
 
-    
+@dataclass
+class ModelTrainerArtifact:
+    model_path:str
+    train_r2_score:float
+    test_r2_score:float
