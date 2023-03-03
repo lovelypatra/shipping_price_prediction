@@ -2,11 +2,8 @@ import pymongo
 import pandas as pd
 import json
 import os
-from dotenv import load_dotenv
+from shipment.config import mongo_client
 
-load_dotenv()
-
-client = pymongo.MongoClient(os.getenv("MONGO_DB_URL"))
 
 
 DATA_FILE_PATH = "/config/workspace/SCMS_Delivery_History_Dataset.csv"
@@ -25,4 +22,4 @@ if __name__=="__main__":
     print(json_record[0])
 
     #insert converted json record to mongo DB
-    client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
+    mongo_client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
