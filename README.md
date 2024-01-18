@@ -18,3 +18,5 @@ learning algorithms that’s best fit for the above case.
 •ML Algorithms used: KNN Regressor, Decision Tree Regressor, Random Forest Regressor, Adaboost Regressor, XGB Regressor, Voting Regressor
 
 •Evaluation metrics used for model performance: r2 score
+
+As a result, the project not only provided a comprehensive understanding of the supply chain shipping pricing prediction problem but also facilitated the comparison of different machine learning algorithms in terms of their predictive accuracy. The selected pipeline, along with the best-performing model, can now be deployed to make real-time predictions on incoming data, enabling supply chain leaders to make informed decisions, address challenges, cut costs, and enhance service levels simultaneously. The continuous monitoring and refinement of the deployed model will be crucial for adapting to changing dynamics in the supply chain domain and ensuring sustained predictive accuracy. Overall, this project contributes to the growing field of supply chain analytics and underscores the potential of machine learning in optimizing and forecasting supply chain processes.
